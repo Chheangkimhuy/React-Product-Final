@@ -3,7 +3,8 @@ import { IoMdSearch } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
-import ProductContext from '../store/ProductProvider'
+import ProductContext from '../store/ProductProvider';
+
 
 function Header() {
   const {cart} =useContext(ProductContext);
@@ -107,7 +108,7 @@ function Header() {
                 <button type="button" className="btn text-light border me-3 rounded-0 position-relative">
                   <FaCartShopping />
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {Card.length >= 0 ? cart.length: (0)}
+                    {cart.length >= 0 ? cart.length: (0)}
                     <span className="visually-hidden">unread messages</span>
                   </span>
                 </button>
