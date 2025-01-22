@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoMdSearch } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
+import ProductContext from '../store/ProductProvider'
 
 function Header() {
-  const [isLoggin, setIsLoggin] = useState(false); // Corrected spelling of `setIsloggin`
+  const {cart} =useContext(ProductContext);
+  const [isLoggin, setIsloggin] = useState(false);
 
   return (
     <>
@@ -79,17 +81,17 @@ function Header() {
       <nav className="container-fluid navbar bg-dark font-poppins p-0">
         <div className="container p-0">
           <div className="col-lg-3 col-12 py-2 py-lg-3 bg-blue-700 ">
-            <div class="dropdown ">
-              <button class="btn text-light bg-transparent  rounded-0 border-0  dropdown-toggle d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div className="dropdown ">
+              <button className="btn text-light bg-transparent  rounded-0 border-0  dropdown-toggle d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div className='d-flex align-items-center'>
                   <CiMenuBurger className='fs-2 me-2' />
                   <span className='fs-3 m-0'>Categories</span>
                 </div>
               </button>
-              <ul class="dropdown-menu w-100 mt-3 rounded-0 border border-2">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <ul className="dropdown-menu w-100 mt-3 rounded-0 border border-2">
+                <li><a className="dropdown-item" href="#">Action</a></li>
+                <li><a className="dropdown-item" href="#">Another action</a></li>
+                <li><a className="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </div>
           </div>
@@ -102,11 +104,11 @@ function Header() {
             </ul>
             <div className="d-flex align-items-center">
               <a href="" className='nav-link hover-blue text-light'>
-                <button type="button" class="btn text-light border me-3 rounded-0 position-relative">
+                <button type="button" className="btn text-light border me-3 rounded-0 position-relative">
                   <FaCartShopping />
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    99+
-                    <span class="visually-hidden">unread messages</span>
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {Card.length >= 0 ? cart.length: (0)}
+                    <span className="visually-hidden">unread messages</span>
                   </span>
                 </button>
                 Shopping Card

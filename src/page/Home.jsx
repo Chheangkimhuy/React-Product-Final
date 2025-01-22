@@ -4,7 +4,8 @@ import { TiTick } from 'react-icons/ti'
 import { LiaCarSolid } from 'react-icons/lia'
 import { GiAlarmClock } from 'react-icons/gi'
 import { MdPermPhoneMsg } from 'react-icons/md'
-import Card from './Card'
+import Card from "../components/Card";
+
 
 function Home() {
   return (
