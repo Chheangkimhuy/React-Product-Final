@@ -7,14 +7,14 @@ import ProductContext from '../store/ProductProvider';
 
 
 function Header() {
-  const {cart} =useContext(ProductContext);
-  const [isLoggin, setIsloggin] = useState(false);
+  const { cart } = useContext(ProductContext);
+  const [isLoggin, setIsloggin] = useState(true);
 
   return (
     <>
       {/* Navbar 1 */}
-      <nav className="container-fluid navbar py-3 font-poppins">
-        <nav className="container">
+      <nav className="container-fluid navbar bg-light shadow fixed-top p-y-2  font-poppins m-0">
+        <nav className="container ">
           <div className=" col-3">
             <a href="#" className='fs-3 fw-bold nav-link'>Logo</a>
           </div>
@@ -27,18 +27,6 @@ function Header() {
           <div className=" col-3 d-none d-lg-block text-light">
             {isLoggin ? (
               <div className="d-flex align-items-center justify-content-end">
-
-                <div
-                  style={{ width: 60, height: 60 }}
-                  className="rounded-circle overflow-hidden border"
-                >
-                  <img
-                    src="https://static01.nyt.com/images/2021/02/27/arts/tomjerry1/tomjerry1-superJumbo.jpg"
-                    alt="Profile"
-                    className="w-100 h-100 object-fit-cover"
-                  />
-                </div>
-
                 <div className="dropdown">
                   <button
                     className="btn border-0 dropdown-toggle text-dark"
@@ -66,6 +54,16 @@ function Header() {
                     </li>
                   </ul>
                 </div>
+                <div
+                  style={{ width: 40, height: 40 }}
+                  className="rounded-circle overflow-hidden border"
+                >
+                  <img
+                    src="https://static01.nyt.com/images/2021/02/27/arts/tomjerry1/tomjerry1-superJumbo.jpg"
+                    alt="Profile"
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                </div>
               </div>
             ) : (
               <div className="d-flex justify-content-end">
@@ -79,7 +77,7 @@ function Header() {
         </nav>
       </nav>
       {/* Navbar 2 */}
-      <nav className="container-fluid navbar bg-dark font-poppins p-0">
+      <nav className="container-fluid navbar bg-dark font-poppins mt-5 p-0">
         <div className="container p-0">
           <div className="col-lg-3 col-12 py-2 py-lg-3 bg-blue-700 ">
             <div className="dropdown ">
@@ -90,9 +88,10 @@ function Header() {
                 </div>
               </button>
               <ul className="dropdown-menu w-100 mt-3 rounded-0 border border-2">
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                <li><NavLink to="/laptop" className="dropdown-item" href="#">Laptop</NavLink></li>
+                <li><NavLink to="/phone" className="dropdown-item" href="#">Phone</NavLink></li>
+                <li><NavLink to="/camera" className="dropdown-item" href="#">Camera</NavLink></li>
+                <li><NavLink to="/printer" className="dropdown-item" href="#">Printer</NavLink></li>
               </ul>
             </div>
           </div>
@@ -104,20 +103,21 @@ function Header() {
               <li><a href="" className='nav-link hover-blue text-light'> Contact</a></li>
             </ul>
             <div className="d-flex align-items-center">
-              <a href="" className='nav-link hover-blue text-light'>
+              <NavLink to="/card" className='nav-link hover-blue text-light'>
                 <button type="button" className="btn text-light border me-3 rounded-0 position-relative">
                   <FaCartShopping />
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {cart.length >= 0 ? cart.length: (0)}
+                    {cart.length >= 0 ? cart.length : (0)}
                     <span className="visually-hidden">unread messages</span>
                   </span>
                 </button>
                 Shopping Card
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
-      </nav></>
+      </nav>
+    </>
   );
 }
 

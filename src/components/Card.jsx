@@ -60,7 +60,7 @@ function Card() {
                 />
               </div>
               {/* Card body */}
-              <div className="card-body text-center font-poppins">
+              <div className="card-body text-center font-poppins border border-1">
                 <NavLink className="hover-blue text-black text-decoration-none fs-5 text-limit">
                  {e.name}
                 </NavLink>
