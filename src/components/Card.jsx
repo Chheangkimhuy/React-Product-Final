@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ProductContext from "../store/ProductProvider";
+import { FiHeart } from "react-icons/fi";
+import { BiCartAdd } from "react-icons/bi";
+import { LuView } from "react-icons/lu";
 
 function Card() {
   const { product,addToCart } = useContext(ProductContext);
@@ -46,9 +49,9 @@ function Card() {
                       : "opacity-0"
                   }`}
                 >
-                  <button className="btn btn-light mx-1" onClick={()=>addToCart(e.id)}>A</button>
-                  <button className="btn btn-light mx-1">H</button>
-                  <button className="btn btn-light mx-1">V</button>
+                  <button className="btn btn-light mx-1" onClick={()=>addToCart(e.id)}><BiCartAdd/></button>
+                  <button className="btn btn-light mx-1"><FiHeart /></button>
+                  <button className="btn btn-light mx-1"><LuView/></button>
                 </div>
                 {/* Image with hover effect */}
                 <img

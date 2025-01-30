@@ -53,13 +53,32 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  // Remove product from cart
+  // Decrease quantity of a product in cart
   const removeFromCart = (productId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === productId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  // Remove product completely from cart
+  const removeCompletelyFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
   return (
-    <ProductContext.Provider value={{ product, cart, addToCart, removeFromCart }}>
+    <ProductContext.Provider
+      value={{
+        product,
+        cart,
+        addToCart,
+        removeFromCart,
+        removeCompletelyFromCart,
+      }}
+    >
       {children}
     </ProductContext.Provider>
   );

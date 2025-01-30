@@ -4,6 +4,9 @@ import { CiMenuBurger } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 import ProductContext from '../store/ProductProvider';
+import { MdOutlineBorderColor, MdSpaceDashboard } from 'react-icons/md';
+import { TbLogout } from 'react-icons/tb';
+import { IoSettingsOutline } from 'react-icons/io5';
 
 
 function Header() {
@@ -12,8 +15,9 @@ function Header() {
 
   return (
     <>
-      {/* Navbar 1 */}
-      <nav className="container-fluid navbar bg-light shadow fixed-top p-y-2  font-poppins m-0">
+      <div className="container-fluid m-0 p-0 fixed-top">
+        {/* Navbar 1 */}
+      <nav className="container-fluid navbar bg-light shadow p-y-2  font-poppins m-0">
         <nav className="container ">
           <div className=" col-3">
             <a href="#" className='fs-3 fw-bold nav-link'>Logo</a>
@@ -36,20 +40,25 @@ function Header() {
                   >
                     User Name
                   </button>
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu ">
                     <li>
                       <a className="dropdown-item" href="#">
-                        Action
+                        <MdSpaceDashboard className='pe-2 fs-3'/>Dashboard
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Another action
+                        <MdOutlineBorderColor className='pe-2 fs-3'/>Order
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Something else here
+                        <IoSettingsOutline className='pe-2 fs-3'/>Setting 
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        <TbLogout className='pe-2 fs-3'/>Logout
                       </a>
                     </li>
                   </ul>
@@ -77,7 +86,7 @@ function Header() {
         </nav>
       </nav>
       {/* Navbar 2 */}
-      <nav className="container-fluid navbar bg-dark font-poppins mt-5 p-0">
+      <nav className="container-fluid navbar bg-dark font-poppins p-0" >
         <div className="container p-0">
           <div className="col-lg-3 col-12 py-2 py-lg-3 bg-blue-700 ">
             <div className="dropdown ">
@@ -117,6 +126,7 @@ function Header() {
           </div>
         </div>
       </nav>
+      </div>
     </>
   );
 }

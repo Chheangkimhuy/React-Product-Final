@@ -9,7 +9,7 @@ import Card from "../components/Card";
 
 function Home() {
   return (
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-0" style={{marginTop:"150px"}}>
       <div className="container p-0 ">
         <div className="row m-0 justify-content-between ">
           <div className="col-lg-8  py-lg-4 pe-lg-4 overflow-hidden" style={{ height: '500px' }}>
