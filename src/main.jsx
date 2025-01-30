@@ -14,6 +14,7 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import CardPage from './page/CardPage.jsx'
 import { ProductProvider } from './store/ProductProvider.jsx'
+import Contact from './page/Contact.jsx'
 
 Aos.init()
 
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')).render(
               <Route path='/' element={<Home />} />
               <Route path='/product' element={<Product />} />
               <Route path='/card' element={<CardPage/>} />
+              <Route path='/contact' element={<Contact/>} />
             </Route>
             <Route path='/*' element={<PageNotFound />} />
           </Routes>

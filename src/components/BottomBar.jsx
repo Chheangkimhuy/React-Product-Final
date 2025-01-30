@@ -19,10 +19,10 @@ function BottomBar() {
             <AiFillProduct className='mx-auto fs-3' />
             Product
           </NavLink></li>
-          <li><a href="" className="d-grid text-light text-decoration-none">
+          <li><NavLink to="/contact" className="d-grid text-light text-decoration-none">
             <RiContactsBookFill className='mx-auto fs-3' />
             Contact
-          </a></li>
+          </NavLink></li>
           <li><NavLink to="/card" className="d-grid text-light text-decoration-none">
             <FaShoppingCart className='mx-auto fs-3' />
             Cart
